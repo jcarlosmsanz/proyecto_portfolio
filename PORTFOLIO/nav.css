@@ -1,0 +1,76 @@
+/* Estilos para el NAVEGADOR */
+
+nav {
+    position: fixed;
+    /* Posición fija */
+    top: 0;
+    /* Alinear en la parte superior */
+    left: 0;
+    /* Alinear a la izquierda */
+    width: 100%;
+    /* Ancho completo */
+    background-color: transparent;
+    /* Fondo transparente */
+    z-index: 999;
+    /* Para superponerlo a otros elementos */
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+
+    text-decoration: none;
+    padding: 5px 10px;
+    color: white;
+}
+
+
+/* Estilos ANIMACION NAVEGADOR */
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu a span:first-child {
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.menu a span {
+    transition: transform 0.2s ease-out;
+}
+
+.menu a:hover span:first-child {
+    transform: translateY(100%);
+}
+
+.menu a:hover span:last-child {
+    transform: none;
+}

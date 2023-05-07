@@ -1,0 +1,133 @@
+#inicio {
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ANIMACIONES */
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0; /* Comienza con opacidad 0 */
+      transform: translateY(-40px); /* Desplazamiento hacia arriba */
+    }
+    100% {
+      opacity: 1; /* Termina con opacidad 1 */
+      transform: translateY(0); /* Sin desplazamiento */
+    }
+  }
+  
+
+  @keyframes fadeLeft {
+    0% {
+      opacity: 0; /* Comienza con opacidad 0 */
+      transform: translateX(-40px); /* Desplazamiento hacia derecha */
+    }
+
+    100% {
+      opacity: 1; /* Termina con opacidad 1 */
+      transform: translateX(0); /* Sin desplazamiento */
+    }
+  }
+  
+
+
+
+  /* Aplicar animación al título */
+  #inicio h1 {
+    animation: fadeIn 1s ease-in-out forwards; /* Duración y transición */
+    margin: 0;
+    margin-left: 20px; /* Ajusta el valor según tus preferencias */
+  }
+
+#inicio h6 {
+    animation: fadeLeft 1s ease-in-out forwards; /* Duración y transición */
+    margin: 0;
+    margin-left: 20px; /* Ajusta el valor según tus preferencias */
+    display: inline-block;
+  }
+
+  
+  #inicio h1:hover {
+    color: #1e899c; /* Cambiar el color al pasar el ratón */
+    font-size: 100px; /* Cambiar el tamaño al pasar el ratón */
+    transition: color 0.5s, font-size 0.5s; /* Agregar transición */
+  }
+
+  #inicio h6:hover {
+    color: rgb(194, 73, 29);
+  }
+
+
+
+  h1 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  h1:hover::after {
+    transform: scaleX(1);
+  }
+
+
+
+
+
+
+  .mis-items {
+    display: flex;
+    justify-content: center;
+    
+}
+
+  .mis-items a span:first-child {
+    display: inline-block;
+    padding: 10px;
+    color: rgb(194, 73, 29);
+}
+
+.mis-items a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.mis-items a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.mis-items a span {
+    transition: transform 0.2s ease-out;
+}
+
+.mis-items a:hover span:first-child {
+    color: rgb(194, 73, 29);
+    transform: translateY(100%);
+}
+
+.mis-items a:hover span:last-child {
+    color: rgb(156, 29, 194);
+    transform: none;
+}
