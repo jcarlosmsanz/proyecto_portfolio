@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-image: url('img/bg.jpg');
+    background-size:  cover;
   }
 
   /* ANIMACIONES */
@@ -50,13 +52,13 @@
 
   
   #inicio h1:hover {
-    color: #1e899c; /* Cambiar el color al pasar el ratón */
+    color: #81d9e9; /* Cambiar el color al pasar el ratón */
     font-size: 100px; /* Cambiar el tamaño al pasar el ratón */
     transition: color 0.5s, font-size 0.5s; /* Agregar transición */
   }
 
   #inicio h6:hover {
-    color: rgb(194, 73, 29);
+    color: rgb(243, 102, 50);
   }
 
 
@@ -97,7 +99,7 @@
   .mis-items a span:first-child {
     display: inline-block;
     padding: 10px;
-    color: rgb(194, 73, 29);
+    color: rgb(243, 102, 50);
 }
 
 .mis-items a {
@@ -128,6 +130,6 @@
 }
 
 .mis-items a:hover span:last-child {
-    color: rgb(156, 29, 194);
+  color: #81d9e9;
     transform: none;
 }

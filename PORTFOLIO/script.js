@@ -1,21 +1,30 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-  const inicio = document.getElementById('inicio');
-  const text = inicio.querySelector('h1');
+window.addEventListener("scroll", function () {
+  var section = document.getElementById("acerca");
+  var title = document.getElementById("titulo");
+  var paragraphs = document.getElementsByClassName("parrafo");
+  var sectionOffset = section.offsetTop;
+  var windowHeight = window.innerHeight;
 
-  // Cargar imagen de fondo con transición
-  inicio.style.backgroundImage = "url('img/portrait.jpg')";
+  if (window.pageYOffset >= sectionOffset - windowHeight / 2) {
+    title.style.left = "0";
 
-  setTimeout(() => {
-    inicio.style.opacity = '1';
-  }, 100);
+    for (var i = 0; i < paragraphs.length; i++) {
+      var delay = i * 1;
+      paragraphs[i].style.opacity = 1;
+      paragraphs[i].style.transitionDelay = delay + "s";
+    }
+  } else {
+    title.style.left = "-100%";
 
-  // Animar aparición de texto en el primer section
-  text.style.transform = 'translateY(-50px)';
-  text.style.opacity = '0';
-
-  setTimeout(() => {
-    text.style.transform = 'translateY(0)';
-    text.style.opacity = '1';
-  }, 1000);
+    for (var i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.opacity = 0;
+      paragraphs[i].style.transitionDelay = "0s";
+    }
+  }
 });
-  
+
+
+
+    /* se utiliza un bucle for para iterar sobre los elementos de clase "parrafo" 
+    y se aplica una transición de opacidad con un retraso creciente para cada párrafo, 
+    logrando así que aparezcan de uno en uno. */
